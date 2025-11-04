@@ -31,7 +31,7 @@ exports.config = {
     }
   },
 
-  maxInstances: process.env.BSTACK_PARALLELS || 10,
+  maxInstances: parseInt(process.env.BSTACK_PARALLELS) || 10,
 
   updateJob: false,
   specs: [
