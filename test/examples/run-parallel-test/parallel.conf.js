@@ -19,7 +19,7 @@ exports.config = {
     ]
   ],
 
-  capabilities: usage_file,
+  capabilities: require('./usage_file.json'),
 
   commonCapabilities: {
     'bstack:options': {

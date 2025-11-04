@@ -1,0 +1,16 @@
+[{
+      "bstack:options": {
+        "deviceName": "iPhone 15",
+        "osVersion": "17.0"
+      }
+    },{
+      "bstack:options": {
+        "deviceName": "iPhone 15 Pro",
+        "osVersion": "17.0"
+      }
+    },{
+      "bstack:options": {
+        "deviceName": "iPhone 16",
+        "osVersion": "18.0"
+      }
+    }]
