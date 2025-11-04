@@ -31,7 +31,7 @@ exports.config = {
     }
   },
 
-  maxInstances: process.env.parallels || 10,
+  maxInstances: process.env.BSTACK_PARALLELS || 10,
 
   updateJob: false,
   specs: [
