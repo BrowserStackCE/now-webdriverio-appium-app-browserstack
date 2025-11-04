@@ -14,22 +14,12 @@ exports.config = {
         buildIdentifier: '${BUILD_NUMBER}',
         browserstackLocal: true,
         opts: { forcelocal: false, localIdentifier: "webdriverio-appium-app-browserstack-repo" },
-        app: process.env.BROWSERSTACK_APP_PATH || './examples/WikipediaSample.apk',
+        app: process.env.BROWSERSTACK_APP_PATH || 'bs://sample.app',
       }
     ]
   ],
 
-  capabilities: [{
-    'bstack:options': {
-      deviceName: 'Google Pixel 8',
-      osVersion: "14.0"
-    }
-  }, {
-    'bstack:options': {
-      deviceName: 'Samsung Galaxy S21',
-      osVersion: "11.0"
-    }
-  }],
+  capabilities: usage_file,
 
   commonCapabilities: {
     'bstack:options': {
@@ -41,7 +31,7 @@ exports.config = {
     }
   },
 
-  maxInstances: 10,
+  maxInstances: process.env.parallels || 10,
 
   updateJob: false,
   specs: [
