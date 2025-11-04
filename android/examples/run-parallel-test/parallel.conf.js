@@ -8,7 +8,9 @@ exports.config = {
     [
       'browserstack',
       {
-        accessibility: false,
+        percy: true,
+        percyCaptureMode: "auto",
+        accessibility: true,
         buildIdentifier: '${BUILD_NUMBER}',
         browserstackLocal: true,
         opts: { forcelocal: false, localIdentifier: "webdriverio-appium-app-browserstack-repo" },
@@ -31,9 +33,8 @@ exports.config = {
 
   commonCapabilities: {
     'bstack:options': {
-      projectName: "BrowserStack Samples",
-      buildName: 'browserstack build',
-      sessionName: 'BStack parallel webdriverio-appium',
+      projectName: "NOW-Mobile-Test",
+      buildName: 'browserstack-build-mobile',
       debug: true,
       networkLogs: true,
       source: 'webdriverio:appium-sample-sdk:v1.0'
