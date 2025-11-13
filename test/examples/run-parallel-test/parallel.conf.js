@@ -19,7 +19,8 @@ exports.config = {
     ]
   ],
 
-  capabilities: require('./../../../../usage_file.json'),
+  // capabilities: require('./../../../../usage_file.json'),
+  capabilities: process.env.BSTACK_CAPS_JSON,
 
   commonCapabilities: {
     'bstack:options': {
