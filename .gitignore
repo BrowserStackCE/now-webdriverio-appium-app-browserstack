@@ -1,4 +1,4 @@
 node_modules/
-local.log
+*.log
 errorShots
 .DS_Store

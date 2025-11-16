@@ -40,11 +40,17 @@ exports.config = {
 
   commonCapabilities: {
     "bstack:options": {
-      projectName: "NOW-Mobile-Test",
-      buildName: "browserstack-build-mobile",
-      debug: true,
-      networkLogs: true,
-      source: "webdriverio:appium-sample-sdk:v1.0",
+      userName: process.env.BROWSERSTACK_USERNAME,
+      accessKey: process.env.BROWSERSTACK_ACCESS_KEY,
+      projectName: process.env.BROWSERSTACK_PROJECT_NAME,
+      buildIdentifier: "#${BUILD_NUMBER}",
+      buildName: process.env.BROWSERSTACK_BUILD_NAME,
+      source: process.env.BROWSERSTACK_BUILD_NAME,
+      networkLogs: "true",
+      consoleLogs: "verbose",
+      performance: "report",
+      debug: "true",
+      source: process.env.BROWSERSTACK_BUILD_NAME,
     },
   },
 
