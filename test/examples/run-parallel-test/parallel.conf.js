@@ -48,7 +48,7 @@ exports.config = {
       source: process.env.BROWSERSTACK_BUILD_NAME,
       networkLogs: "true",
       consoleLogs: "verbose",
-      performance: "report",
+      appProfiling: true,
       debug: "true",
       source: process.env.BROWSERSTACK_BUILD_NAME,
     },
