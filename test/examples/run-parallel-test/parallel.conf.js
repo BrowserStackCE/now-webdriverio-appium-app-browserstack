@@ -10,7 +10,7 @@ exports.config = {
       {
         testObservability: true,
         testObservabilityOptions: {
-          buildTag: "run-bstack-now-web",
+          buildTag: "run-bstack-now-app",
           buildIdentifier: "#${BUILD_NUMBER}",
         },
         percy: true,
