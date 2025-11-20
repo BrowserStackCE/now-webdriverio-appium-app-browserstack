@@ -28,8 +28,8 @@ exports.config = {
         buildIdentifier: "${BUILD_NUMBER}",
         browserstackLocal: true,
         opts: {
-          forcelocal: false,
-          localIdentifier: "webdriverio-appium-app-browserstack-repo",
+          force: true,
+          localIdentifier: "browserstack-now-local",
         },
         app: process.env.BROWSERSTACK_APP,
       },
