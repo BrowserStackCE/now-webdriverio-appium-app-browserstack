@@ -30,8 +30,7 @@ exports.config = {
         opts: {
           force: true,
           localIdentifier: "browserstack-now-local",
-        },
-        app: process.env.BROWSERSTACK_APP,
+        }
       },
     ],
   ],
@@ -51,6 +50,7 @@ exports.config = {
       appProfiling: true,
       debug: "true",
       source: process.env.BROWSERSTACK_BUILD_NAME,
+      app: process.env.BROWSERSTACK_APP
     },
   },
 
