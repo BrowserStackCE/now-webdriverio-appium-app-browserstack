@@ -1,8 +1,9 @@
 exports.config = {
-  user: process.env.BROWSERSTACK_USERNAME || "BROWSERSTACK_USERNAME",
-  key: process.env.BROWSERSTACK_ACCESS_KEY || "BROWSERSTACK_ACCESS_KEY",
-
+  user: process.env.BROWSERSTACK_USERNAME,
+  key: process.env.BROWSERSTACK_ACCESS_KEY,
   hostname: "hub.browserstack.com",
+  port: 443,
+  protocol: "https",
 
   services: [
     [
@@ -10,6 +11,7 @@ exports.config = {
       {
         testObservability: true,
         testObservabilityOptions: {
+          buildName: process.env.BROWSERSTACK_BUILD_NAME,
           buildTag: "run-bstack-now-app",
           buildIdentifier: "#${BUILD_NUMBER}",
         },
@@ -30,7 +32,8 @@ exports.config = {
         opts: {
           force: true,
           localIdentifier: "browserstack-now-local",
-        }
+        },
+        "appium:app": process.env.BROWSERSTACK_APP
       },
     ],
   ],
@@ -38,7 +41,6 @@ exports.config = {
   capabilities: JSON.parse(process.env.BSTACK_CAPS_JSON),
 
   commonCapabilities: {
-    "appium:app": process.env.BROWSERSTACK_APP,
     "bstack:options": {
       userName: process.env.BROWSERSTACK_USERNAME,
       accessKey: process.env.BROWSERSTACK_ACCESS_KEY,
@@ -49,8 +51,7 @@ exports.config = {
       networkLogs: "true",
       consoleLogs: "verbose",
       appProfiling: true,
-      debug: "true",
-      source: process.env.BROWSERSTACK_BUILD_NAME,
+      debug: "true"
     },
   },
 
