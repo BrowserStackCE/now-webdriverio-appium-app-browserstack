@@ -38,6 +38,7 @@ exports.config = {
   capabilities: JSON.parse(process.env.BSTACK_CAPS_JSON),
 
   commonCapabilities: {
+    "appium:app": process.env.BROWSERSTACK_APP,
     "bstack:options": {
       userName: process.env.BROWSERSTACK_USERNAME,
       accessKey: process.env.BROWSERSTACK_ACCESS_KEY,
@@ -50,7 +51,6 @@ exports.config = {
       appProfiling: true,
       debug: "true",
       source: process.env.BROWSERSTACK_BUILD_NAME,
-      app: process.env.BROWSERSTACK_APP
     },
   },
 
